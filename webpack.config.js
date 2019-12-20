@@ -1,23 +1,39 @@
 const webpack = require('webpack')
 const path = require('path')
 const htmlWebpackPlugin = require('html-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 const APP_DIR = path.join(__dirname, 'src')
 
+const VENDOR_LIBS = ['react', 'react-dom', 'react-router-dom']
+
 const config = {
-    entry: `${APP_DIR}/App.jsx`,
+    entry: {
+        app: `${APP_DIR}/App.jsx`
+    },
     output: {
-        filename: 'app.js'
+        filename: '[name].[contenthash].js'
+    },
+    optimization: {
+        moduleIds: 'hashed',
+        runtimeChunk: 'single',
+        splitChunks: {
+          cacheGroups: {
+            vendor: {
+              test: /[\\/]node_modules[\\/]/,
+              name: 'vendors',
+              chunks: 'all',
+            },
+          },    
+        }    
     },
     plugins: [
         new htmlWebpackPlugin({
             title: 'Online shop',
             template: `${APP_DIR}/index.html`
-        })
+        }),
+        new CleanWebpackPlugin()
     ],
-    resolve: {
-        extensions: ['.js', '.jsx']
-      },
     module: {
         rules: [
             {
