@@ -4,6 +4,7 @@ const htmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 const APP_DIR = path.join(__dirname, 'src')
+const DIST_DIR = path.join(__dirname, 'dist')
 
 const VENDOR_LIBS = ['react', 'react-dom', 'react-router-dom']
 
@@ -26,6 +27,11 @@ const config = {
             },
           },    
         }    
+    },
+    devServer: {
+        contentBase: DIST_DIR,
+        port: 8080,
+        open: true
     },
     plugins: [
         new htmlWebpackPlugin({

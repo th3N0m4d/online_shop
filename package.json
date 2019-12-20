@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build:dev": "webpack -d",
+    "start": "webpack-dev-server",
     "clean": "rimraf ./dist",
     "test": "jest",
     "jest:watch": "jest --watchAll"
@@ -39,7 +40,8 @@
     "jest-enzyme": "^7.1.2",
     "style-loader": "^1.0.2",
     "webpack": "^4.41.3",
-    "webpack-cli": "^3.3.10"
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.1"
   },
   "dependencies": {
     "react": "^16.12.0",
