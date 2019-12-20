@@ -6,14 +6,15 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const APP_DIR = path.join(__dirname, 'src')
 const DIST_DIR = path.join(__dirname, 'dist')
 
-const VENDOR_LIBS = ['react', 'react-dom', 'react-router-dom']
-
 const config = {
     entry: {
-        app: `${APP_DIR}/App.jsx`
+        app: `${APP_DIR}/index.jsx`
     },
     output: {
         filename: '[name].[contenthash].js'
+    },
+    resolve: {
+        extensions: ['.js', '.jsx'],
     },
     optimization: {
         moduleIds: 'hashed',

@@ -2,13 +2,12 @@
   "name": "online_shop",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "<rootDir>/src/index.jsx",
   "scripts": {
     "build:dev": "webpack -d",
     "start": "webpack-dev-server",
-    "clean": "rimraf ./dist",
     "test": "jest",
-    "jest:watch": "jest --watchAll"
+    "test:watch": "jest --watchAll"
   },
   "jest": {
     "setupFilesAfterEnv": [
