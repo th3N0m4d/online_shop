@@ -14,7 +14,7 @@ const config = {
         filename: '[name].[contenthash].js'
     },
     resolve: {
-        extensions: ['.js', '.jsx'],
+        extensions: ['.js', '.jsx', '.scss'],
     },
     optimization: {
         moduleIds: 'hashed',
@@ -60,6 +60,11 @@ const config = {
                 test: /\.css$/,
                 use: ['style-loader', 'css-loader']
             },
+            {
+                test: /\.scss$/,
+                include: [`${APP_DIR}/scss`],
+                use: ['style-loader', 'css-loader', 'sass-loader']
+            },            
             {
                 test: /\.(jpe?g|png|svg)$/,
                 use: 'file-loader'
