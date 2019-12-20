@@ -1,9 +1,9 @@
 import React from 'react'
 
-import './style.css'
+import TopNav from '../TopNav'
 
 const App = () => (
-    <div>Hello world!</div>
+    <TopNav />
 )
 
 export default App
