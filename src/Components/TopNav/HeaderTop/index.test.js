@@ -4,11 +4,11 @@ import { shallow } from 'enzyme'
 import HeaderTop from '.'
 
 describe('HeaderTop', () => {
-    it('should render', () => {
-        const wrapper = shallow(
-            <HeaderTop />
-        )
+  it('should render', () => {
+    const wrapper = shallow(
+      <HeaderTop />
+    )
 
-        expect(wrapper.exists()).toBeTruthy()
-    });
-});
+    expect(wrapper.exists()).toBeTruthy()
+  })
+})
