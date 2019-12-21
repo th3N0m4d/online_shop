@@ -14,6 +14,9 @@ const config = {
         filename: '[name].[contenthash].js'
     },
     resolve: {
+        alias: {
+            Utilities: path.resolve(APP_DIR, 'utilities/')
+        },
         extensions: ['.js', '.jsx', '.scss'],
     },
     optimization: {
@@ -36,10 +39,10 @@ const config = {
     },
     plugins: [
         new htmlWebpackPlugin({
-            title: 'Online shop',
-            template: `${APP_DIR}/index.html`
+            template: `${APP_DIR}/index.html`,
+            favicon: `${APP_DIR}/img/favicon.png`
         }),
-        new CleanWebpackPlugin()
+        new CleanWebpackPlugin(),
     ],
     module: {
         rules: [
