@@ -7,6 +7,7 @@ import Footer from '../Footer'
 import Login from '../Auth/Login'
 
 import routes from '@/utilities/routes'
+import Register from '../Auth/Register'
 
 const App = () => (
   <>
@@ -14,6 +15,9 @@ const App = () => (
     <Switch>
       <Route path={routes.login}>
         <Login />
+      </Route>
+      <Route path={routes.register}>
+        <Register />
       </Route>
       <Route path='/'>
         <Home />
