@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-import routes from 'Utilities/routes'
+import routes from '@/utilities/routes'
 
 const HeaderTop = () => (
   <div className='top_menu row m0'>
@@ -12,18 +12,18 @@ const HeaderTop = () => (
       <div className='float-right'>
         <ul className='right_side'>
           <li>
-            <Link to={routes.home}>
-                        Login/Register
+            <Link to={routes.login}>
+                Login/Register
             </Link>
           </li>
           <li>
             <Link to={routes.account}>
-                        My Account
+                My Account
             </Link>
           </li>
           <li>
             <Link to={routes.contact}>
-                        Contact Us
+                Contact Us
             </Link>
           </li>
         </ul>
