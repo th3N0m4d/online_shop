@@ -8,10 +8,10 @@ const FeaturedProduct = ({ id, img, title, price }) => (
         <img className='img-fluid' src={img} alt='' />
         <div className='p_icon'>
           <a href='#'>
-            <i class='far fa-heart' />
+            <i className='far fa-heart' />
           </a>
           <a href='#'>
-            <i class='fas fa-shopping-cart' />
+            <i className='fas fa-shopping-cart' />
           </a>
         </div>
       </div>

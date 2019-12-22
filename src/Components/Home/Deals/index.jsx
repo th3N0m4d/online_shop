@@ -1,6 +1,6 @@
 import React from 'react'
 
-import dealImg from './../../product/hot_deals/deal1.jpg'
+import dealImg from '../../../img/product/hot_deals/deal1.jpg'
 
 const Deals = () => (
   <section className='hot_deals_area section_gap'>
