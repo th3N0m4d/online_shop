@@ -13,8 +13,8 @@ import './responsive.css'
 import App from './Components/App'
 
 render(
-    <BrowserRouter>
-        <App />
-    </BrowserRouter>, 
-    document.getElementById('app')
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>,
+  document.getElementById('app')
 )
