@@ -1,6 +1,9 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import loginImg from '../../img/login.jpg'
+
+import routes from '@/utilities/routes'
 
 const Login = () => (
   <>
@@ -10,8 +13,8 @@ const Login = () => (
           <div className='banner_content text-center'>
             <h2>Login/Register</h2>
             <div className='page_link'>
-              <a href='#'>Home</a>
-              <a href='#'>Login</a>
+              <Link to={routes.home}>Home</Link>
+              <Link to={routes.login}>Login</Link>
             </div>
           </div>
         </div>
@@ -26,7 +29,7 @@ const Login = () => (
               <div className='hover'>
                 <h4>New to our website?</h4>
                 <p>There are advances being made in science and technology everyday, and a good example of this is the</p>
-                <a className='main_btn' href='registration.html'>Create an Account</a>
+                <Link className='main_btn' to={routes.register}>Create an Account</Link>
               </div>
             </div>
           </div>
