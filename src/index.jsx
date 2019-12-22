@@ -9,6 +9,7 @@ import '@fortawesome/fontawesome-free/js/brands'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './scss/style.scss'
 import './responsive.css'
+import './vendors/linericon/style.css'
 
 import App from './Components/App'
 
