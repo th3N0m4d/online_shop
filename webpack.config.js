@@ -17,7 +17,7 @@ const config = {
       Utilities: path.resolve(APP_DIR, 'utilities/'),
       '@': APP_DIR
     },
-    extensions: ['.js', '.jsx', '']
+    extensions: ['.js', '.jsx']
   },
   optimization: {
     moduleIds: 'hashed',
@@ -71,6 +71,18 @@ const config = {
       {
         test: /\.(jpe?g|png|svg)$/,
         use: 'file-loader'
+      },
+      {
+        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'fonts/'
+            }
+          }
+        ]
       }
     ]
   }
