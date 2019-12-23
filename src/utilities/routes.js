@@ -8,18 +8,18 @@
 | /contact              | /ContactUs                |
 | /                     | /Home                     |
 | /auth/login           | /Auth/Login               |
-| /products/:id/details | /Products/ProductDetails  |
+| /products/:id         | /Products/ProductDetails  |
 | /auth/register        | /Auth/Register            |
 */
 const routes = {
   account: '/account',
   cart: '/buy/cart',
-  category: '/products/category',
+  productsCategory: '/products/category',
   checkout: 'buy/checkout',
-  contact: '/contact',
+  contact: '/contact-us',
   home: '/',
   login: '/auth/login',
-  productDetails: '/products/:id/details',
+  productDetails: '/products',
   register: '/auth/register'
 }
 
