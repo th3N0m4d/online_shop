@@ -57,22 +57,8 @@ const TopNav = () => (
                       </li>
                     </ul>
                   </li>
-                  <li className='nav-item submenu dropdown'>
-                    <Link to='#' className='nav-link dropdown-toggle' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false'>Pages</Link>
-                    <ul className='dropdown-menu'>
-                      <li className='nav-item'>
-                        <Link className='nav-link' to='login.html'>Login</Link>
-                      </li>
-                      <li className='nav-item'>
-                        <Link className='nav-link' to='tracking.html'>Tracking</Link>
-                      </li>
-                      <li className='nav-item'>
-                        <Link className='nav-link' to='elements.html'>Elements</Link>
-                      </li>
-                    </ul>
-                  </li>
                   <li className='nav-item'>
-                    <Link className='nav-link' to='contact.html'>Contact</Link>
+                    <Link className='nav-link' to={routes.contact}>Contact</Link>
                   </li>
                 </ul>
               </div>
