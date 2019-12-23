@@ -35,7 +35,7 @@ const ProductDetails = () => (
                 naturalSlideHeight={125}
                 totalSlides={3}
               >
-                <Slider>
+                <Slider isPlaying>
                   {
                     [0, 1, 2].map(i => (
                       <Slide index={i} className='carousel slide' key={i}>
