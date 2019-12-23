@@ -8,6 +8,7 @@ import Login from '../Auth/Login'
 
 import routes from '@/utilities/routes'
 import Register from '../Auth/Register'
+import ContactUs from '../ContatUs'
 
 const App = () => (
   <>
@@ -18,6 +19,9 @@ const App = () => (
       </Route>
       <Route path={routes.register}>
         <Register />
+      </Route>
+      <Route path={routes.contact}>
+        <ContactUs />
       </Route>
       <Route path='/'>
         <Home />
