@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+import routes from '@/utilities/routes'
+
 const FeaturedProduct = ({ id, img, title, price }) => (
   <div className='col col1' key={id}>
     <div className='f_p_item'>
@@ -15,7 +17,7 @@ const FeaturedProduct = ({ id, img, title, price }) => (
           </a>
         </div>
       </div>
-      <Link to='#'>
+      <Link to={`${routes.productDetails}/${id}`}>
         <h4>{title}</h4>
       </Link>
       <h5>{price}</h5>

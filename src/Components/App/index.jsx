@@ -9,6 +9,7 @@ import Login from '../Auth/Login'
 import routes from '@/utilities/routes'
 import Register from '../Auth/Register'
 import ContactUs from '../ContatUs'
+import ProductDetails from '../Products/Details'
 
 const App = () => (
   <>
@@ -22,6 +23,9 @@ const App = () => (
       </Route>
       <Route path={routes.contact}>
         <ContactUs />
+      </Route>
+      <Route path={routes.productDetails}>
+        <ProductDetails />
       </Route>
       <Route path='/'>
         <Home />
