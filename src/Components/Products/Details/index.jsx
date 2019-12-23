@@ -1,7 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { CarouselProvider, Slider, Slide } from 'pure-react-carousel'
+import 'pure-react-carousel/dist/react-carousel.es.css'
 
 import routes from '@/utilities/routes'
+import product01Img from '../../../img/product/single-product/s-product-1.jpg'
+import product02Img from '../../../img/product/single-product/s-product-s-2.jpg'
+import product03Img from '../../../img/product/single-product/s-product-s-3.jpg'
+import product04Img from '../../../img/product/single-product/s-product-s-4.jpg'
 
 const ProductDetails = () => (
   <>
@@ -24,30 +30,32 @@ const ProductDetails = () => (
         <div className='row s_product_inner'>
           <div className='col-lg-6'>
             <div className='s_product_img'>
-              <div id='carouselExampleIndicators' className='carousel slide' data-ride='carousel'>
-                <ol className='carousel-indicators'>
-                  <li data-target='#carouselExampleIndicators' data-slide-to='0' className=''>
-                    <img src='img/product/single-product/s-product-s-2.jpg' alt='' />
-                  </li>
-                  <li data-target='#carouselExampleIndicators' data-slide-to='1' className=''>
-                    <img src='img/product/single-product/s-product-s-3.jpg' alt='' />
-                  </li>
-                  <li data-target='#carouselExampleIndicators' data-slide-to='2' className='active'>
-                    <img src='img/product/single-product/s-product-s-4.jpg' alt='' />
-                  </li>
-                </ol>
-                <div className='carousel-inner'>
-                  <div className='carousel-item'>
-                    <img className='d-block w-100' src='img/product/single-product/s-product-1.jpg' alt='First slide' />
-                  </div>
-                  <div className='carousel-item'>
-                    <img className='d-block w-100' src='img/product/single-product/s-product-1.jpg' alt='Second slide' />
-                  </div>
-                  <div className='carousel-item active'>
-                    <img className='d-block w-100' src='img/product/single-product/s-product-1.jpg' alt='Third slide' />
-                  </div>
-                </div>
-              </div>
+              <CarouselProvider
+                naturalSlideWidth={100}
+                naturalSlideHeight={125}
+                totalSlides={3}
+              >
+                <Slider>
+                  {
+                    [0, 1, 2].map(i => (
+                      <Slide index={i} className='carousel slide' key={i}>
+                        <ol className='carousel-indicators'>
+                          <li>
+                            <img src={product02Img} alt='' />
+                          </li>
+                          <li>
+                            <img src={product03Img} alt='' />
+                          </li>
+                          <li className='active'>
+                            <img src={product04Img} alt='' />
+                          </li>
+                        </ol>
+                        <img className='d-block w-100' src={product01Img} alt='First slide' />
+                      </Slide>
+                    ))
+                  }
+                </Slider>
+              </CarouselProvider>
             </div>
           </div>
           <div className='col-lg-5 offset-lg-1'>
