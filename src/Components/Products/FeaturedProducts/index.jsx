@@ -6,6 +6,7 @@ import featuredProduct03 from '../../../img/product/feature-product/f-p-3.jpg'
 import featuredProduct04 from '../../../img/product/feature-product/f-p-4.jpg'
 import featuredProduct05 from '../../../img/product/feature-product/f-p-5.jpg'
 import FeaturedProduct from '../FeaturedProduct'
+import Pagination from '../../Pagination'
 
 const products = [
   { id: 1, img: featuredProduct01, title: 'Long Sleeve TShirt', price: '$150.00' },
@@ -35,37 +36,7 @@ const FeaturedProducts = () => (
             products.map(item => <FeaturedProduct key={item.id} {...item} />)
           }
         </div>
-        <div className='row'>
-          <nav className='cat_page mx-auto' aria-label='Page navigation example'>
-            <ul className='pagination'>
-              <li className='page-item'>
-                <a className='page-link' href='#'>
-                  <i className='fa fa-chevron-left' aria-hidden='true' />
-                </a>
-              </li>
-              <li className='page-item active'>
-                <a className='page-link' href='#'>01</a>
-              </li>
-              <li className='page-item'>
-                <a className='page-link' href='#'>02</a>
-              </li>
-              <li className='page-item'>
-                <a className='page-link' href='#'>03</a>
-              </li>
-              <li className='page-item blank'>
-                <a className='page-link' href='#'>...</a>
-              </li>
-              <li className='page-item'>
-                <a className='page-link' href='#'>09</a>
-              </li>
-              <li className='page-item'>
-                <a className='page-link' href='#'>
-                  <i className='fa fa-chevron-right' aria-hidden='true' />
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </div>
+        <Pagination />
       </div>
     </div>
   </section>
