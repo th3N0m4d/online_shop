@@ -1,63 +1,117 @@
-import React from 'react'
+import React, { PureComponent } from 'react'
+import PropTypes from 'prop-types'
 
-const ReviewForm = () => (
-  <div class='review_box'>
-    <h4>Add a Review</h4>
-    <p>Your Rating:</p>
-    <ul class='list'>
-      <li>
-        <a href='#'>
-          <i class='fa fa-star' />
-        </a>
-      </li>
-      <li>
-        <a href='#'>
-          <i class='fa fa-star' />
-        </a>
-      </li>
-      <li>
-        <a href='#'>
-          <i class='fa fa-star' />
-        </a>
-      </li>
-      <li>
-        <a href='#'>
-          <i class='fa fa-star' />
-        </a>
-      </li>
-      <li>
-        <a href='#'>
-          <i class='fa fa-star' />
-        </a>
-      </li>
-    </ul>
-    <p>Outstanding</p>
-    <form class='row contact_form' action='contact_process.php' method='post' id='contactForm' novalidate='novalidate'>
-      <div class='col-md-12'>
-        <div class='form-group'>
-          <input type='text' class='form-control' id='name' name='name' placeholder='Your Full name' />
-        </div>
+const propTypes = {
+  onSubmit: PropTypes.func
+}
+
+const MAX_RATING = 5
+
+class ReviewForm extends PureComponent {
+  state = {
+    stars: -1,
+    name: '',
+    email: '',
+    phoneNumber: '',
+    message: ''
+  }
+
+  handleInput = e => {
+    this.setState({
+      [e.target.name]: e.target.value
+    })
+  }
+
+  handleSubmit = e => {
+    this.props.onSubmit(this.state)
+    e.preventDefault()
+  }
+
+  handleRating = stars => {
+    this.setState({
+      stars
+    })
+  }
+
+  render () {
+    return (
+      <div className='review_box'>
+        <h4>Add a Review</h4>
+        <p>Your Rating:</p>
+        <ul className='list'>
+          {
+            [1, 2, 3, 4, 5].map((stars, index) => (
+              <li key={index} id={stars} onClick={() => this.handleRating(stars)}>
+                {
+                  stars <= this.state.stars
+                    ? <i className='fa fa-star' style={{ color: '#fbd600' }} />
+                    : <i className='far fa-star' style={{ color: '#fbd600' }} />
+                }
+              </li>
+            ))
+          }
+        </ul>
+        {
+          this.state.stars === MAX_RATING && <p>Outstanding</p>
+        }
+        <form className='row contact_form' noValidate onSubmit={this.handleSubmit}>
+          <div className='col-md-12'>
+            <div className='form-group'>
+              <input
+                type='text'
+                className='form-control'
+                name='name'
+                placeholder='Your full name'
+                onChange={this.handleInput}
+                value={this.state.name}
+              />
+            </div>
+          </div>
+          <div className='col-md-12'>
+            <div className='form-group'>
+              <input
+                type='email'
+                className='form-control'
+                name='email'
+                placeholder='Email Address'
+                onChange={this.handleInput}
+                value={this.state.email}
+              />
+            </div>
+          </div>
+          <div className='col-md-12'>
+            <div className='form-group'>
+              <input
+                type='text'
+                className='form-control'
+                name='phoneNumber'
+                placeholder='Phone Number'
+                onChange={this.handleInput}
+                value={this.state.phoneNumber}
+              />
+            </div>
+          </div>
+          <div className='col-md-12'>
+            <div className='form-group'>
+              <textarea
+                className='form-control'
+                name='message'
+                rows='1'
+                placeholder='Review'
+                onChange={this.handleInput}
+                value={this.state.message}
+              />
+            </div>
+          </div>
+          <div className='col-md-12 text-right'>
+            <button type='submit' value='submit' className='btn submit_btn'>Submit Now</button>
+          </div>
+        </form>
       </div>
-      <div class='col-md-12'>
-        <div class='form-group'>
-          <input type='email' class='form-control' id='email' name='email' placeholder='Email Address' />
-        </div>
-      </div>
-      <div class='col-md-12'>
-        <div class='form-group'>
-          <input type='text' class='form-control' id='number' name='number' placeholder='Phone Number' />
-        </div>
-      </div>
-      <div class='col-md-12'><grammarly-extension class='_1KJtL' style='position: absolute; top: 0px; left: 0px; pointer-events: none;'><div data-grammarly-part='highlights' class='u_fNK' style='position: absolute; top: 0px; left: 0px;'><div style='box-sizing: content-box; top: 1px; left: 16px; width: 417px; height: 138px; position: relative; pointer-events: none; overflow: hidden; border: 0px; border-radius: 0px; padding: 0px; margin: 0px;'><div style='position: absolute; top: 0px; left: 0px;'><div style='height: 1038px; width: 1857px;'><div /><div /></div></div></div></div><div data-grammarly-part='button' class='u_fNK' style='position: absolute; top: 0px; left: 0px;'><div style='box-sizing: content-box; top: 1px; left: 16px; width: 417px; height: 138px; position: relative; pointer-events: none; overflow: hidden; border: 0px; border-radius: 0px; padding: 0px; margin: 0px;'><div style='position: absolute; transform: translate(-100%, -100%); top: 130px; left: 405px; width: auto; height: auto; pointer-events: all;'><div style='flex-direction: row; display: flex;'><div style='position: relative;' /><div><div class='_5WizN _1QzSN'><div class='_3YmQx'><div title='Protected by Grammarly' class='_3QdKe'>&nbsp;</div></div></div></div></div></div></div></div></grammarly-extension><grammarly-extension class='_1KJtL' style='position: absolute; top: 0px; left: 0px; pointer-events: none;'><div data-grammarly-part='highlights' class='u_fNK' style='position: absolute; top: 0px; left: 0px;'><div style='box-sizing: content-box; top: 1px; left: 16px; width: 417px; height: 138px; position: relative; pointer-events: none; overflow: hidden; border: 0px; border-radius: 0px; padding: 0px; margin: 0px;'><div style='position: absolute; top: 0px; left: 0px;'><div style='height: 1038px; width: 1857px;'><div /><div /></div></div></div></div><div data-grammarly-part='button' class='u_fNK' style='position: absolute; top: 0px; left: 0px;'><div style='box-sizing: content-box; top: 1px; left: 16px; width: 417px; height: 138px; position: relative; pointer-events: none; overflow: hidden; border: 0px; border-radius: 0px; padding: 0px; margin: 0px;'><div style='position: absolute; transform: translate(-100%, -100%); top: 130px; left: 405px; width: auto; height: auto; pointer-events: all;'><div style='flex-direction: row; display: flex;'><div style='position: relative;' /><div><div class='_5WizN _1QzSN'><div class='_3YmQx'><div title='Protected by Grammarly' class='_3QdKe'>&nbsp;</div></div></div></div></div></div></div></div></grammarly-extension>
-        <div class='form-group'>
-          <textarea class='form-control' name='message' id='message' rows='1' placeholder='Review' spellcheck='false' />
-        </div>
-      </div>
-      <div class='col-md-12 text-right'>
-        <button type='submit' value='submit' class='btn submit_btn'>Submit Now</button>
-      </div>
-    </form>
-  </div>
-)
+    )
+  }
+}
+
+ReviewForm.propTypes = propTypes
 
 export default ReviewForm
