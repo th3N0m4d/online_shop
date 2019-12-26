@@ -1,23 +1,22 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import Banner from '@/Components/Banner'
 
 import routes from '@/utilities/routes'
 
+const pageLinks = [
+  {
+    name: 'Home',
+    route: routes.home
+  },
+  {
+    name: 'Contact us',
+    route: routes.contact
+  }
+]
+
 const ContactUs = () => (
   <>
-    <section className='banner_area'>
-      <div className='banner_inner d-flex align-items-center'>
-        <div className='container'>
-          <div className='banner_content text-center'>
-            <h2>Contact Us</h2>
-            <div className='page_link'>
-              <Link to={routes.home}>Home</Link>
-              <Link to={routes.contact}>Contact Us</Link>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <Banner header='Contact Us' pageLinks={pageLinks} />
     <section className='contact_area p_120'>
       <div className='container'>
         {/* Place google maps here */}

@@ -1,5 +1,8 @@
 import React, { PureComponent } from 'react'
+import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
+
+import routes from '@/utilities/routes'
 
 const propTypes = {
   onSubmit: PropTypes.func
@@ -42,7 +45,7 @@ class LoginForm extends PureComponent {
           </div>
           <div className='col-md-12 form-group'>
             <button type='submit' value='submit' className='btn submit_btn'>Log In</button>
-            <a href='/'>Forgot Password?</a>
+            <Link to={routes.passwordRecovery}>Forgot Password?</Link>
           </div>
         </form>
       </div>
