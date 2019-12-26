@@ -10,7 +10,12 @@ module.exports = async ({ config, mode }) => {
 
   // Make whatever fine-grained changes you need
   config.module.rules = [...webpackConfig.module.rules]
-  // config.module.rules.push({
+
+  config.resolve.alias = {
+    ...config.resolve.alias,
+    ...webpackConfig.resolve.alias
+  }
+  // config.module.rules.push( {
   //   test: /\.scss$/,
   //   use: ['style-loader', 'css-loader', 'sass-loader'],
   //   // include: path.resolve(__dirname, '../'),
