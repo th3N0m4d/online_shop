@@ -24,33 +24,4 @@ describe('Banner', () => {
 
     expect(headerContent.text()).toEqual(props.header)
   })
-
-  it('should render page links', () => {
-    const props = {
-      pageLinks: [
-        {
-          name: 'Home',
-          route: '/'
-        },
-        {
-          name: 'Help',
-          route: '/help'
-        }
-      ]
-    }
-
-    const wrapper = shallow(
-      <Banner {...props} />
-    )
-
-    const pageLinks = wrapper.find('.page_link')
-    const firstLink = pageLinks.find('a').first()
-    const secondLink = pageLinks.find('a').last()
-
-    expect(pageLinks.children()).toHaveLength(2)
-    expect(firstLink.text()).toEqual('Home')
-    expect(firstLink.prop('href')).toEqual('/')
-    expect(secondLink.text()).toEqual('Help')
-    expect(secondLink.prop('href')).toEqual('/help')
-  })
 })

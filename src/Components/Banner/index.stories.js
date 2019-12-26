@@ -1,5 +1,6 @@
 import React from 'react'
 import { withKnobs, text } from '@storybook/addon-knobs'
+import { BrowserRouter } from 'react-router-dom'
 
 import Banner from '.'
 
@@ -19,4 +20,8 @@ const pageLinks = [
   }
 ]
 
-export const reviewForm = () => <Banner header={text('header', 'Home')} pageLinks={pageLinks} />
+export const reviewForm = () => (
+  <BrowserRouter>
+    <Banner header={text('header', 'Home')} pageLinks={pageLinks} />
+  </BrowserRouter>
+)
