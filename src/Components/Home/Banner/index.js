@@ -1,4 +1,7 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+
+import routes from '@/utilities/routes'
 
 const Banner = () => (
   <section className='home_banner_area'>
@@ -12,7 +15,7 @@ const Banner = () => (
             </h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
             </p>
-            <a className='white_bg_btn' href='#'>View Collection</a>
+            <Link to={routes.home} className='white_bg_btn'>View Collection</Link>
           </div>
         </div>
       </div>
