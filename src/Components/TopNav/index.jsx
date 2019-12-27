@@ -1,11 +1,27 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
 
 import logoImg from '../../img/logo.png'
 import routes from '@/utilities/routes'
 import HeaderTop from './HeaderTop'
+import classNames from 'classname'
 
-const TopNav = () => (
+import { ToggleTopNavButton, NavMenu } from './Atoms'
+
+const propTypes = {
+  onToggle: PropTypes.func,
+  visible: PropTypes.bool
+}
+
+const classes = visible => classNames(
+  'collapse navbar-collapse offset',
+  {
+    show: visible
+  }
+)
+
+const TopNav = ({ onToggle, visible }) => (
   <header className='header_area'>
     <HeaderTop />
     <div className='main_menu'>
@@ -14,12 +30,12 @@ const TopNav = () => (
           <Link className='navbar-brand logo_h' to={routes.home}>
             <img src={logoImg} alt='' />
           </Link>
-          <button className='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>
+          <ToggleTopNavButton className='navbar-toggler' onClick={onToggle}>
             <span className='icon-bar' />
             <span className='icon-bar' />
             <span className='icon-bar' />
-          </button>
-          <div className='collapse navbar-collapse offset'>
+          </ToggleTopNavButton>
+          <NavMenu className={classes(visible)}>
             <div className='row w-100'>
               <div className='col-lg-7 pr-0'>
                 <ul className='nav navbar-nav center_nav pull-right'>
@@ -30,7 +46,7 @@ const TopNav = () => (
                     <Link to='#' className='nav-link dropdown-toggle' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false'>Shop</Link>
                     <ul className='dropdown-menu'>
                       <li className='nav-item'>
-                        <Link className='nav-link' to={routes.category}>Shop Category</Link>
+                        <Link className='nav-link' to={routes.productsCategory}>Shop Category</Link>
                       </li>
                       <li className='nav-item'>
                         <Link className='nav-link' to={routes.productDetails}>Product Details</Link>
@@ -100,11 +116,13 @@ const TopNav = () => (
                 </ul>
               </div>
             </div>
-          </div>
+          </NavMenu>
         </div>
       </nav>
     </div>
   </header>
 )
+
+TopNav.propTypes = propTypes
 
 export default TopNav

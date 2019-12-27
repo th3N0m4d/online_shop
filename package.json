@@ -47,6 +47,9 @@
     ],
     "ignore": [
       "dist/**"
+    ],
+    "globals": [
+      "Event"
     ]
   },
   "devDependencies": {
