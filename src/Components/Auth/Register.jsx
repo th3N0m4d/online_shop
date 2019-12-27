@@ -5,21 +5,22 @@ import loginImg from '../../img/login.jpg'
 import routes from '@/utilities/routes'
 import RegisterForm from './RegisterForm'
 
+import Banner from '@/Components/Banner'
+
+const pageLinks = [
+  {
+    name: 'Home',
+    route: routes.home
+  },
+  {
+    name: 'Register',
+    route: routes.register
+  }
+]
+
 const Register = () => (
   <>
-    <section className='banner_area'>
-      <div className='banner_inner d-flex align-items-center'>
-        <div className='container'>
-          <div className='banner_content text-center'>
-            <h2>Login/Register</h2>
-            <div className='page_link'>
-              <Link to={routes.home}>Home</Link>
-              <Link to={routes.register}>Register</Link>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <Banner header='Login/Register' pageLinks={pageLinks} />
     <section className='login_box_area p_120'>
       <div className='container'>
         <div className='row'>
