@@ -1,13 +1,13 @@
 import React from 'react'
 
-import img01Path from '../../img/instagram/Image-01.jpg'
-import img02Path from '../../img/instagram/Image-02.jpg'
-import img03Path from '../../img/instagram/Image-03.jpg'
-import img04Path from '../../img/instagram/Image-04.jpg'
-import img05Path from '../../img/instagram/Image-05.jpg'
-import img06Path from '../../img/instagram/Image-06.jpg'
-import img07Path from '../../img/instagram/Image-07.jpg'
-import img08Path from '../../img/instagram/Image-08.jpg'
+import img01Path from 'images/instagram/Image-01.jpg'
+import img02Path from 'images/instagram/Image-02.jpg'
+import img03Path from 'images/instagram/Image-03.jpg'
+import img04Path from 'images/instagram/Image-04.jpg'
+import img05Path from 'images/instagram/Image-05.jpg'
+import img06Path from 'images/instagram/Image-06.jpg'
+import img07Path from 'images/instagram/Image-07.jpg'
+import img08Path from 'images/instagram/Image-08.jpg'
 
 const Footer = () => (
   <footer className='footer-area section_gap'>
