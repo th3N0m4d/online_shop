@@ -8,8 +8,8 @@ import '@fortawesome/fontawesome-free/js/regular'
 import '@fortawesome/fontawesome-free/js/brands'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import '../public/scss/style.scss'
-import './responsive.css'
-import './vendors/linericon/style.css'
+import '../public/responsive.css'
+import '../public/vendors/linericon/style.css'
 
 import App from '@/components/App'
 
