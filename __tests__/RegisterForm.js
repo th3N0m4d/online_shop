@@ -1,6 +1,6 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import RegisterForm from './RegisterForm'
+import RegisterForm from '@/components/Auth/RegisterForm'
 import * as R from 'ramda'
 
 describe('RegisterForm', () => {

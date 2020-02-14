@@ -1,15 +1,15 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 
-import TopNav from '../TopNav'
-import Home from '../Home'
-import Footer from '../Footer'
-import Login from '../Auth/Login'
+import TopNav from '@/components/TopNav'
+import Home from '@/components/Home'
+import Footer from '@/components/Footer'
+import Login from '@/components/Auth/Login'
 
 import routes from '@/utilities/routes'
-import Register from '../Auth/Register'
-import ContactUs from '../ContatUs'
-import ProductDetails from '../Products/Details'
+import Register from '@/components/Auth/Register'
+import ContactUs from '@/components/ContactUs'
+import ProductDetails from '@/components/Products/Details'
 
 const App = () => (
   <>

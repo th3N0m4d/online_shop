@@ -1,11 +1,13 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import Home from '.'
+import Login from '@/components/Auth/Login'
 
-describe('Home', () => {
+describe('Login', () => {
   it('should render', () => {
-    const wrapper = shallow(<Home />)
+    const wrapper = shallow(
+      <Login />
+    )
 
     expect(wrapper.exists()).toBeTruthy()
   })

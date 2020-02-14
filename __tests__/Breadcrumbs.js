@@ -2,7 +2,7 @@ import React from 'react'
 import { shallow, mount } from 'enzyme'
 import { BrowserRouter, Link } from 'react-router-dom'
 
-import Breadcrumbs from './Breadcrumbs'
+import Breadcrumbs from '@/components/Banner/Breadcrumbs'
 
 describe('Breadcrumbs', () => {
   it('should render', () => {

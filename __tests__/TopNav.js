@@ -1,8 +1,8 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import TopNav from '.'
-import { ToggleTopNavButton, NavMenu } from './Atoms'
+import TopNav from '@/components/TopNav'
+import { ToggleTopNavButton, NavMenu } from '@/components/TopNav/Atoms'
 
 const resizeWindow = (x, y) => {
   window.innerWidth = x
