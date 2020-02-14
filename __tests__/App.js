@@ -14,8 +14,8 @@ describe('App', () => {
 
   it.each`
     route                     | componentName 
-    ${routes.login}           | ${'Login'}    
-    ${routes.register}        | ${'Register'}
+    ${routes.login}           | ${'LoginPage'}    
+    ${routes.register}        | ${'RegisterPage'}
     ${routes.contact}         | ${'ContactUs'}
     ${routes.productDetails}  | ${'ProductDetails'}
     ${routes.home}            | ${'Home'}

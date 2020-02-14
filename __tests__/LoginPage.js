@@ -1,12 +1,12 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import Login from '@/components/Auth/Login'
+import LoginPage from '@/components/Auth/LoginPage'
 
-describe('Login', () => {
+describe('LoginPage', () => {
   it('should render', () => {
     const wrapper = shallow(
-      <Login />
+      <LoginPage />
     )
 
     expect(wrapper.exists()).toBeTruthy()

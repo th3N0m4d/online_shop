@@ -1,10 +1,6 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 
-const propTypes = {
-  onSubmit: PropTypes.func
-}
-
 class RegisterForm extends PureComponent {
   state = {
     name: '',
@@ -12,6 +8,10 @@ class RegisterForm extends PureComponent {
     password: '',
     password2: '',
     keepLoggedIn: false
+  }
+
+  static propTypes = {
+    onSubmit: PropTypes.func
   }
 
   handleOnSubmit = e => {
@@ -59,7 +59,5 @@ class RegisterForm extends PureComponent {
     )
   }
 }
-
-RegisterForm.propTypes = propTypes
 
 export default RegisterForm

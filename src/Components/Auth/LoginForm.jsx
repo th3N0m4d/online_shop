@@ -4,15 +4,15 @@ import PropTypes from 'prop-types'
 
 import routes from '@/utilities/routes'
 
-const propTypes = {
-  onSubmit: PropTypes.func
-}
-
 class LoginForm extends PureComponent {
   state = {
     username: '',
     password: '',
     keepLoggedIn: false
+  }
+
+  static propTypes = {
+    onSubmit: PropTypes.func
   }
 
   handleOnInput = e => {
@@ -52,7 +52,5 @@ class LoginForm extends PureComponent {
     )
   }
 }
-
-LoginForm.propTypes = propTypes
 
 export default LoginForm

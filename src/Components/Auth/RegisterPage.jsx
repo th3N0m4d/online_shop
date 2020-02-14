@@ -2,9 +2,9 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 import loginImg from 'images/login.jpg'
-
 import routes from '@/utilities/routes'
-import LoginForm from './LoginForm'
+import RegisterForm from './RegisterForm'
+
 import Banner from '@/components/Banner'
 
 const pageLinks = [
@@ -13,12 +13,12 @@ const pageLinks = [
     route: routes.home
   },
   {
-    name: 'Login',
-    route: routes.login
+    name: 'Register',
+    route: routes.register
   }
 ]
 
-const Login = () => (
+const RegisterPage = () => (
   <>
     <Banner header='Login/Register' pageLinks={pageLinks} />
     <section className='login_box_area p_120'>
@@ -28,14 +28,14 @@ const Login = () => (
             <div className='login_box_img'>
               <img className='img-fluid' src={loginImg} alt='' />
               <div className='hover'>
-                <h4>New to our website?</h4>
-                <p>There are advances being made in science and technology everyday, and a good example of this is the</p>
-                <Link className='main_btn' to={routes.register}>Create an Account</Link>
+                <h4>Already a registered user?</h4>
+                <p>Click the button below to log in</p>
+                <Link className='main_btn' to={routes.login}>Login</Link>
               </div>
             </div>
           </div>
           <div className='col-lg-6'>
-            <LoginForm />
+            <RegisterForm />
           </div>
         </div>
       </div>
@@ -43,4 +43,4 @@ const Login = () => (
   </>
 )
 
-export default Login
+export default RegisterPage
