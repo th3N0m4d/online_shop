@@ -1,11 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-import loginImg from '../../img/login.jpg'
+import loginImg from 'images/login.jpg'
 
 import routes from '@/utilities/routes'
 import LoginForm from './LoginForm'
-import Banner from '@/Components/Banner'
+import Banner from '@/components/Banner'
 
 const pageLinks = [
   {

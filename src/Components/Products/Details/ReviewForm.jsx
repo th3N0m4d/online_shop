@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 
-import UserRating from '@/Components/Products/UserRating'
+import UserRating from '@/components/Products/UserRating'
 
 const propTypes = {
   onSubmit: PropTypes.func

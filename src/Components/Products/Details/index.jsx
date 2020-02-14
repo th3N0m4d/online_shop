@@ -1,13 +1,13 @@
 import React from 'react'
 import { CarouselProvider, Slider, Slide } from 'pure-react-carousel'
 import 'pure-react-carousel/dist/react-carousel.es.css'
-import Banner from '@/Components/Banner'
 
+import Banner from '@/components/Banner'
 import routes from '@/utilities/routes'
-import product01Img from '../../../img/product/single-product/s-product-1.jpg'
-import product02Img from '../../../img/product/single-product/s-product-s-2.jpg'
-import product03Img from '../../../img/product/single-product/s-product-s-3.jpg'
-import product04Img from '../../../img/product/single-product/s-product-s-4.jpg'
+import product01Img from 'images/product/single-product/s-product-1.jpg'
+import product02Img from 'images/product/single-product/s-product-s-2.jpg'
+import product03Img from 'images/product/single-product/s-product-s-3.jpg'
+import product04Img from 'images/product/single-product/s-product-s-4.jpg'
 
 const pageLinks = [
   {
