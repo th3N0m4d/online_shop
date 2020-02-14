@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import Breadcrumbs from './Breadcrumbs'
+// import Breadcrumbs from '@/components/Breadcrumbs'
 
 const propTypes = {
   header: PropTypes.string,
@@ -25,7 +25,7 @@ const Banner = ({ header, pageLinks }) => (
       <div className='container'>
         <div className='banner_content text-center'>
           <h2>{header}</h2>
-          <Breadcrumbs pageLinks={pageLinks} />
+          {/* <Breadcrumbs pageLinks={pageLinks} /> */}
         </div>
       </div>
     </div>

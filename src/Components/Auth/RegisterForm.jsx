@@ -48,7 +48,7 @@ class RegisterForm extends PureComponent {
           <div className='col-md-12 form-group'>
             <div className='creat_account'>
               <input type='checkbox' id='keepLoggedIn' name='keepLoggedIn' onChange={this.handleOnChange} />
-              <label for='keepLoggedIn'>Keep me logged in</label>
+              <label htmlFor='keepLoggedIn'>Keep me logged in</label>
             </div>
           </div>
           <div className='col-md-12 form-group'>

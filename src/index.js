@@ -11,7 +11,7 @@ import './scss/style.scss'
 import './responsive.css'
 import './vendors/linericon/style.css'
 
-import App from './Components/App'
+import App from '@/components/App'
 
 render(
   <BrowserRouter>

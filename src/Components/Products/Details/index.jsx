@@ -79,8 +79,8 @@ const ProductDetails = () => (
 can make your interior look awesome, and at the same time give you the pleasant warm feeling during the winter.
               </p>
               <div className='product_count'>
-                <label for='qty'>Quantity:</label>
-                <input type='text' name='qty' id='sst' maxlength='12' value='1' title='Quantity:' className='input-text qty' />
+                <label htmlFor='qty'>Quantity:</label>
+                <input type='text' name='qty' id='sst' maxLength='12' title='Quantity:' className='input-text qty' />
                 <button className='increase items-count' type='button'>
                   <i className='lnr lnr-chevron-up' />
                 </button>
