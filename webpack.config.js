@@ -20,7 +20,7 @@ const devServer = {
 const plugins = [
   new HtmlWebPackPlugin({
     template: `${APP_DIR}/index.html`,
-    favicon: `${APP_DIR}/img/favicon.png`
+    favicon: `${PUBLIC_DIR}/img/favicon.png`
   }),
   new CleanWebpackPlugin()
 ]
@@ -50,7 +50,7 @@ const config = {
       },
       {
         test: /\.scss$/,
-        include: [`${APP_DIR}/scss`],
+        include: [`${PUBLIC_DIR}/scss`],
         use: ['style-loader', 'css-loader', 'sass-loader']
       },
       {

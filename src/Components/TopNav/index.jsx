@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 
-import logoImg from '../../img/logo.png'
+import logoImg from 'images/logo.png'
 import routes from '@/utilities/routes'
 import HeaderTop from './HeaderTop'
 import classNames from 'classname'
