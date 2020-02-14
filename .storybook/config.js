@@ -10,4 +10,4 @@ import '../src/responsive.css'
 import '../src/vendors/linericon/style.css'
 
 // automatically import all files ending in *.stories.js
-configure(require.context('../src/Components', true, /\.stories\.js$/), module);
+configure(require.context('../src/components', true, /\.stories\.js$/), module);
