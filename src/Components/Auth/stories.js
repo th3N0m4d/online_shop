@@ -3,9 +3,9 @@ import { action } from '@storybook/addon-actions'
 import { BrowserRouter } from 'react-router-dom'
 
 import LoginForm from './LoginForm'
-import Login from './Login'
+import LoginPage from './LoginPage'
 import RegisterForm from './RegisterForm'
-import Register from './Register'
+import RegisterPage from './RegisterPage'
 
 export default {
   title: 'Auth',
@@ -14,8 +14,8 @@ export default {
 
 export const loginForm = () => <LoginForm onSubmit={action('onSubmit')} />
 
-export const loginPage = () => <Login />
+export const loginPage = () => <LoginPage />
 
 export const registerForm = () => <RegisterForm onSubmit={action('onSubmit')} />
 
-export const registerPage = () => <Register />
+export const registerPage = () => <RegisterPage />
