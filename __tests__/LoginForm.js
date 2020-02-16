@@ -2,6 +2,7 @@ import React from 'react'
 import { shallow } from 'enzyme'
 
 import LoginForm from '@/components/Auth/LoginForm'
+import { triggerOnSubmit, triggerOnChange } from '@/utilities/helpers'
 
 describe('LoginForm', () => {
   it('should render', () => {
@@ -25,20 +26,30 @@ describe('LoginForm', () => {
     expect(onSubmitSpy).toHaveBeenCalled()
   })
 
-  it('should trigger onChange callback', () => {
-    const onChangeSpy = jest.fn()
-    const wrapper = shallow(
-      <LoginForm onChange={onChangeSpy} />
-    )
+  it.each`
+    name              | value
+    ${'username'}     | ${'John Doe'}
+    ${'password'}     | ${'1234'}
+    ${'keepLoggedIn'} | ${true}
+  
+    `('should trigger onChange callback for field "$name" with "$value"',
+    ({ name, value }) => {
+      const onChangeSpy = jest.fn()
+      const wrapper = shallow(
+        <LoginForm onChange={onChangeSpy} />
+      )
 
-    const form = wrapper.find('form')
+      const expectedParams = {
+        target: {
+          name,
+          value
+        }
+      }
 
-    form.find('input[name="username"]').simulate('change', { target: { value: 'John Doe', name: 'username' } })
+      const form = wrapper.find('form')
 
-    expect(onChangeSpy).toHaveBeenCalled()
-  })
+      triggerOnChange(form)({ name, value })
 
-  const triggerOnSubmit = form => {
-    form.simulate('submit', { preventDefault: () => undefined })
-  }
+      expect(onChangeSpy).toHaveBeenCalledWith(expectedParams)
+    })
 })

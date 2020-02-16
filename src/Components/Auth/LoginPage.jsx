@@ -32,7 +32,6 @@ class LoginPage extends PureComponent {
   }
 
   handleOnSubmit = e => {
-    this.props.onSubmit(this.state)
     e.preventDefault()
   }
 
