@@ -12,7 +12,7 @@ export default {
   decorators: [storyFn => <BrowserRouter>{storyFn()}</BrowserRouter>]
 }
 
-export const loginForm = () => <LoginForm onSubmit={action('onSubmit')} />
+export const loginForm = () => <LoginForm onSubmit={action('onSubmit')} onChange={action('onChange')} />
 
 export const loginPage = () => <LoginPage />
 
