@@ -12,10 +12,20 @@ export default {
   decorators: [storyFn => <BrowserRouter>{storyFn()}</BrowserRouter>]
 }
 
-export const loginForm = () => <LoginForm onSubmit={action('onSubmit')} onChange={action('onChange')} />
+const withPreventDefault = handler => e => {
+  e.preventDefault()
+  handler(e)
+}
+
+export const loginForm = () => (
+  <LoginForm
+    onSubmit={withPreventDefault(action('onSubmit'))}
+    onChange={action('onChange')}
+  />
+)
 
 export const loginPage = () => <LoginPage />
 
-export const registerForm = () => <RegisterForm onSubmit={action('onSubmit')} />
+export const registerForm = () => <RegisterForm onSubmit={withPreventDefault(action('onSubmit'))} />
 
 export const registerPage = () => <RegisterPage />
