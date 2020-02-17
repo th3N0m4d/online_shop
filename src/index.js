@@ -1,4 +1,6 @@
-import { configure } from '@storybook/react';
+import React from 'react'
+import { BrowserRouter as Router } from 'react-router-dom'
+import { render } from 'react-dom'
 
 import '@fortawesome/fontawesome-free/js/fontawesome'
 import '@fortawesome/fontawesome-free/js/solid'
@@ -9,5 +11,11 @@ import '../public/scss/style.scss'
 import '../public/responsive.css'
 import '../public/vendors/linericon/style.css'
 
-// automatically import all files ending in *.stories.js
-configure(require.context('../src/components', true, /stories.js/), module);
+import App from '@/components/App'
+
+render(
+  <Router>
+    <App />
+  </Router>,
+  document.getElementById('app')
+)

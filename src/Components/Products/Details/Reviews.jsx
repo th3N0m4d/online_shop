@@ -1,8 +1,8 @@
 import React from 'react'
 
-import photo01 from '../../../img/product/single-product/review-1.png'
-import photo02 from '../../../img/product/single-product/review-2.png'
-import photo03 from '../../../img/product/single-product/review-3.png'
+import photo01 from 'images/product/single-product/review-1.png'
+import photo02 from 'images/product/single-product/review-2.png'
+import photo03 from 'images/product/single-product/review-3.png'
 import UserReview from './UserReview'
 
 const reviews = [

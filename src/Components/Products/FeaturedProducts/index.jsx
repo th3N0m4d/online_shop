@@ -1,10 +1,10 @@
 import React from 'react'
 
-import featuredProduct01 from '../../../img/product/feature-product/f-p-1.jpg'
-import featuredProduct02 from '../../../img/product/feature-product/f-p-2.jpg'
-import featuredProduct03 from '../../../img/product/feature-product/f-p-3.jpg'
-import featuredProduct04 from '../../../img/product/feature-product/f-p-4.jpg'
-import featuredProduct05 from '../../../img/product/feature-product/f-p-5.jpg'
+import featuredProduct01 from 'images/product/feature-product/f-p-1.jpg'
+import featuredProduct02 from 'images/product/feature-product/f-p-2.jpg'
+import featuredProduct03 from 'images/product/feature-product/f-p-3.jpg'
+import featuredProduct04 from 'images/product/feature-product/f-p-4.jpg'
+import featuredProduct05 from 'images/product/feature-product/f-p-5.jpg'
 import FeaturedProduct from '../FeaturedProduct'
 import Pagination from '../../Pagination'
 

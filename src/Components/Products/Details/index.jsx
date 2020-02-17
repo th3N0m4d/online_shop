@@ -1,30 +1,31 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import { CarouselProvider, Slider, Slide } from 'pure-react-carousel'
 import 'pure-react-carousel/dist/react-carousel.es.css'
 
+import Banner from '@/components/Banner'
 import routes from '@/utilities/routes'
-import product01Img from '../../../img/product/single-product/s-product-1.jpg'
-import product02Img from '../../../img/product/single-product/s-product-s-2.jpg'
-import product03Img from '../../../img/product/single-product/s-product-s-3.jpg'
-import product04Img from '../../../img/product/single-product/s-product-s-4.jpg'
+import product01Img from 'images/product/single-product/s-product-1.jpg'
+import product02Img from 'images/product/single-product/s-product-s-2.jpg'
+import product03Img from 'images/product/single-product/s-product-s-3.jpg'
+import product04Img from 'images/product/single-product/s-product-s-4.jpg'
 
+const pageLinks = [
+  {
+    name: 'Home',
+    route: routes.home
+  },
+  {
+    name: 'Category',
+    route: routes.productsCategory
+  },
+  {
+    name: 'Product Details',
+    route: routes.ProductDetails
+  }
+]
 const ProductDetails = () => (
   <>
-    <section className='banner_area'>
-      <div className='banner_inner d-flex align-items-center'>
-        <div className='container'>
-          <div className='banner_content text-center'>
-            <h2>Single Product Page</h2>
-            <div className='page_link'>
-              <Link to={routes.home}>Home</Link>
-              <Link to={routes.productsCategory}>Category</Link>
-              <Link to={routes.productDetails}>Product Details</Link>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <Banner header='Single Product Page' pageLinks={pageLinks} />
     <div className='product_image_area'>
       <div className='container'>
         <div className='row s_product_inner'>
@@ -78,8 +79,8 @@ const ProductDetails = () => (
 can make your interior look awesome, and at the same time give you the pleasant warm feeling during the winter.
               </p>
               <div className='product_count'>
-                <label for='qty'>Quantity:</label>
-                <input type='text' name='qty' id='sst' maxlength='12' value='1' title='Quantity:' className='input-text qty' />
+                <label htmlFor='qty'>Quantity:</label>
+                <input type='text' name='qty' id='sst' maxLength='12' title='Quantity:' className='input-text qty' />
                 <button className='increase items-count' type='button'>
                   <i className='lnr lnr-chevron-up' />
                 </button>

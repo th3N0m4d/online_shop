@@ -1,15 +1,15 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 
+import UserRating from '@/components/Products/UserRating'
+
 const propTypes = {
   onSubmit: PropTypes.func
 }
 
-const MAX_RATING = 5
-
 class ReviewForm extends PureComponent {
   state = {
-    stars: -1,
+    rating: 0,
     name: '',
     email: '',
     phoneNumber: '',
@@ -27,9 +27,9 @@ class ReviewForm extends PureComponent {
     e.preventDefault()
   }
 
-  handleRating = stars => {
+  handleRating = rating => {
     this.setState({
-      stars
+      rating
     })
   }
 
@@ -38,22 +38,7 @@ class ReviewForm extends PureComponent {
       <div className='review_box'>
         <h4>Add a Review</h4>
         <p>Your Rating:</p>
-        <ul className='list'>
-          {
-            [1, 2, 3, 4, 5].map((stars, index) => (
-              <li key={index} id={stars} onClick={() => this.handleRating(stars)}>
-                {
-                  stars <= this.state.stars
-                    ? <i className='fa fa-star' style={{ color: '#fbd600' }} />
-                    : <i className='far fa-star' style={{ color: '#fbd600' }} />
-                }
-              </li>
-            ))
-          }
-        </ul>
-        {
-          this.state.stars === MAX_RATING && <p>Outstanding</p>
-        }
+        <UserRating onClick={this.handleRating} rating={this.state.rating} />
         <form className='row contact_form' noValidate onSubmit={this.handleSubmit}>
           <div className='col-md-12'>
             <div className='form-group'>

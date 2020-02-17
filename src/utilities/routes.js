@@ -1,15 +1,16 @@
 /*
-| Path                  | Component                 |
-| ------------------    |:------------------------: |
-| /account              | /Account                  |
-| /buy/cart             | /Buy/Cart                 |
-| /products/category    | /Products/Category        |
-| /buy/checkout         | /Buy/Checkout             |
-| /contact              | /ContactUs                |
-| /                     | /Home                     |
-| /auth/login           | /Auth/Login               |
-| /products/:id         | /Products/ProductDetails  |
-| /auth/register        | /Auth/Register            |
+| Path                    | Component                 |
+| ------------------      |:------------------------: |
+| /account                | /Account                  |
+| /buy/cart               | /Buy/Cart                 |
+| /products/category      | /Products/Category        |
+| /buy/checkout           | /Buy/Checkout             |
+| /contact                | /ContactUs                |
+| /                       | /Home                     |
+| /auth/login             | /Auth/Login               |
+| /products/:id           | /Products/ProductDetails  |
+| /auth/register          | /Auth/Register            |
+| /auth/password-recovery | /Auth/PasswordRecovery    |
 */
 const routes = {
   account: '/account',
@@ -20,7 +21,8 @@ const routes = {
   home: '/',
   login: '/auth/login',
   productDetails: '/products',
-  register: '/auth/register'
+  register: '/auth/register',
+  passwordRecovery: '/auth/password-recovery'
 }
 
 export default routes
